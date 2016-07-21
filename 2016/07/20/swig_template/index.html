@@ -1,0 +1,704 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="模板之美">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swig模板引擎">
+<meta property="og:url" content="http://yoursite.com/2016/07/20/swig_template/index.html">
+<meta property="og:site_name" content="记事录">
+<meta property="og:description" content="模板之美">
+<meta property="og:updated_time" content="2016-07-21T09:36:29.495Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="swig模板引擎">
+<meta name="twitter:description" content="模板之美">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/20/swig_template/"/>
+
+  <title> swig模板引擎 | 记事录 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">记事录</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">~~~你的 star 是我持续更新的动力，点进github使劲砸我一星吧~~~</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                swig模板引擎
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-20T11:15:00+08:00" content="2016-07-20">
+              2016-07-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>模板之美</p>
+<a id="more"></a>
+<p>swig虽然是一个模板引擎，但是他比起其他的模板引擎（ejs，doT等），他更像是一个规范，约束，从它的文档可以看出，虽然可以很简单的入门，但是它所包含的内容绝对不是简单的hello world所演示得了的，对于这个模板的学习，我也是基于工作需求，用一点学一点，知识点也比较散乱，所以在此文章中记录汇总自己的点滴经验，点滴认识。</p>
+<h2 id="启程"><a href="#启程" class="headerlink" title="启程"></a>启程</h2><p>官方网站(<a href="http://paularmstrong.github.io/swig/" target="_blank" rel="external">http://paularmstrong.github.io/swig/</a>).</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install swig --save</div></pre></td></tr></table></figure>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><h4 id="标签（Tags）"><a href="#标签（Tags）" class="headerlink" title="标签（Tags）"></a>标签（Tags）</h4><h5 id="autoscape"><a href="#autoscape" class="headerlink" title="autoscape"></a>autoscape</h5><p>控制模板输出的时候，变量的自动转义，接受的值有 <code>true</code>，<code>false</code>，<code>js</code>，<code>html</code></p>
+<p>true: 自动转义,默认</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;% autoescape <span class="literal">true</span> %&#125;&#123;&#123; article &#125;&#125;&#123;% endautoescape %&#125; <span class="comment">// 数据源 ： &#123;article: "&lt;span&gt;hello&lt;/span&gt;"&#125;</span></div><div class="line"><span class="comment">//--&gt;  &amp;lt;span&amp;gt;hello&amp;lt;/span&amp;gt;</span></div></pre></td></tr></table></figure>
+<p>false：不进行转译，输出到浏览器就会识别成标签</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;% autoescape <span class="literal">false</span> %&#125;&#123;&#123; article &#125;&#125;&#123;% endautoescape %&#125; <span class="comment">// 数据源 ： &#123;article: "&lt;span&gt;hello&lt;/span&gt;"&#125;</span></div><div class="line"><span class="comment">//--&gt;  &lt;span&gt;hello&lt;/span&gt;</span></div></pre></td></tr></table></figure>
+<p>html,js：目前还没发现它有什么用</p>
+<h5 id="block"><a href="#block" class="headerlink" title="block"></a>block</h5><p>定义一个块可以在继承的时候被重写或复用，这里明确一下，swig的模板的继承是通过 extends 和 block来进行的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!-- layout.swig --&gt;</div><div class="line"></div><div class="line">&lt;!doctype html&gt;</div><div class="line">    &lt;html&gt;</div><div class="line">        &lt;head&gt;</div><div class="line">          &lt;meta charset="utf-8"&gt;</div><div class="line">          &lt;title&gt;&#123;% block title %&#125;My Site&#123;% endblock %&#125;&lt;/title&gt;</div><div class="line">          &#123;% block head %&#125;</div><div class="line">          &lt;link rel="stylesheet" href="main.css"&gt;</div><div class="line">          &#123;% endblock %&#125;</div><div class="line">        &lt;/head&gt;</div><div class="line">        &lt;body&gt;</div><div class="line">          &#123;% block content %&#125;&#123;% endblock %&#125;</div><div class="line">        &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line">&lt;!-- index.swig --&gt;</div><div class="line"></div><div class="line">&#123;% extends 'layout.html' %&#125; &lt;!-- 继承与layout --&gt;</div><div class="line"></div><div class="line">&#123;% block title %&#125;My Page&#123;% endblock %&#125; &lt;!-- 重写layout中的block title块 --&gt;</div><div class="line"></div><div class="line">&#123;% block head %&#125;</div><div class="line">  &#123;% parent %&#125;</div><div class="line">  &lt;link rel="stylesheet" href="custom.css"&gt;</div><div class="line">&#123;% endblock %&#125;  &lt;!-- layout中有一个head block， 如果我们不想重写它，而是想在后面追加东西， --&gt; </div><div class="line">                &lt;!-- 那么用 &#123;&#123;% parent %&#125;&#125; 可以把父级同名块插入到该位置 ,上面就是把 main.css 插入到 custom.css中--&gt;</div></pre></td></tr></table></figure>
+<h5 id="else"><a href="#else" class="headerlink" title="else"></a>else</h5><p>任何复杂逻辑都离不开if判断， 下面就是 if语句的所有形式。</p>
+<p>单if </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% if article %&#125;  </div><div class="line">    &lt;span&gt;条件为true&lt;/span&gt;</div><div class="line">&#123;% endif %&#125; &lt;!-- 数据为 &#123;article：true&#125; 时输出"条件为true 为 &#123;article：true&#125; 什么也没有"--&gt;</div></pre></td></tr></table></figure>
+<p>if else</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% <span class="keyword">if</span> <span class="literal">false</span> %&#125;</div><div class="line">  statement1</div><div class="line">&#123;% <span class="keyword">else</span> %&#125;</div><div class="line">  statement2</div><div class="line">&#123;% endif %&#125; &lt;!-- 输出 statement2 --&gt;</div></pre></td></tr></table></figure>
+<p>else if</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if fasle %&#125;</div><div class="line">    &lt;span&gt;else&lt;/span&gt;</div><div class="line">&#123;% elseif  (2 % 3) %&#125;</div><div class="line">    &lt;span&gt;else if&lt;/span&gt;</div><div class="line">&#123;% else %&#125;</div><div class="line">    &lt;span&gt;else&lt;/span&gt;</div><div class="line">&#123;% endif %&#125; &lt;!-- 输出 &lt;span&gt;else if&lt;/span&gt; --&gt;</div></pre></td></tr></table></figure>
+<p>条件语句罗列</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;% <span class="keyword">if</span> x %&#125;&#123;% endif %&#125;</div><div class="line">&#123;% <span class="keyword">if</span> !x %&#125;&#123;% endif %&#125;</div><div class="line">&#123;% <span class="keyword">if</span> not x %&#125;&#123;% endif %&#125; &lt;!-- not 就是对 x 取反 --&gt;</div><div class="line"></div><div class="line">&#123;% <span class="keyword">if</span> x and y %&#125;&#123;% endif %&#125;</div><div class="line">&#123;% <span class="keyword">if</span> x &amp;&amp; y %&#125;&#123;% endif %&#125; &lt;!-- 取这种写法 --&gt;</div><div class="line">&#123;% <span class="keyword">if</span> x or y %&#125;&#123;% endif %&#125;</div><div class="line">&#123;% <span class="keyword">if</span> x || y %&#125;&#123;% endif %&#125; &lt;!-- 取这种写法 --&gt;</div><div class="line">&#123;% <span class="keyword">if</span> x || (y &amp;&amp; z) %&#125;&#123;% endif %&#125;</div><div class="line"></div><div class="line">&#123;% <span class="keyword">if</span> x [operator] y %&#125;</div><div class="line">  Operators: ==, !=, &lt;, &lt;=, &gt;, &gt;=, ===, !==</div><div class="line">&#123;% endif %&#125;</div><div class="line"></div><div class="line">&#123;% if x|lower === 'tacos' %&#125; &lt;!-- 还可以对参数添加过滤器，简直强大 --&gt;</div><div class="line">  You can use filters on any operand in the statement.</div><div class="line">&#123;% endif %&#125;</div><div class="line"></div><div class="line">&#123;% if x in y %&#125; &lt;!--如果是对象，判断是不是对象的key，如果是数组，判断是不是数组的值--&gt;</div><div class="line">  If x is a value that is present in y, this will return true.</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
+<h5 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h5><p>继承父组件，必须是在模板最前面，必须明确，继承具有唯一性，也就是你只能有一个父亲，主要是不要把 继承和组合搞混了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% extends <span class="string">"./layout.html"</span> %&#125;</div></pre></td></tr></table></figure>
+<h5 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h5><p>对当前模板块应用过滤器，过滤器是一个方法。参看详情 <code>filters</code>。</p>
+<h5 id="for"><a href="#for" class="headerlink" title="for"></a>for</h5><p>复杂逻辑必不可少的部分， 大概swig支持 <code>for in</code> 去遍历， 不过已经够用了（不过仔细看下面例子的注释，不要掉坑）</p>
+<p>循环对象</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;% for x in article %&#125;</div><div class="line">    &#123;% if loop.first %&#125; &lt;ul&gt; &#123;% endif %&#125;</div><div class="line">    &lt;li&gt;&#123;&#123; loop.index &#125;&#125;-&#123;&#123; loop.key &#125;&#125;:&#123;&#123; x &#125;&#125;&lt;/li&gt;</div><div class="line">    &#123;% if loop.last %&#125; &lt;/ul&gt; &#123;% endif %&#125;</div><div class="line">&#123;% endfor %&#125; </div><div class="line">&lt;!--&#123;article: &#123;one: 'hi', two: 'bye'&#125;&#125;；for 循环里会给一个loop接口，可以访问到 index（x下标从1开始），index0（下标从0开始） </div><div class="line">revidenx（反方向的下标，1开始），revindex0， first， last， key如果是一个对象那个，获取对象可以key值</div><div class="line">x是value，不是key，要取得key通过loop.key 或通过 下面这种方式  --&gt;</div><div class="line">&#123;% for key, val in article%&#125;</div><div class="line">    &#123;&#123;key&#125;&#125; -- &#123;&#123; avl &#125;&#125;</div><div class="line">&#123;%endfor%&#125; &lt;!-- &#123;article: [1,2,3,4]&#125; --&gt;</div></pre></td></tr></table></figure>
+<p>循环数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% <span class="keyword">for</span> key, val <span class="keyword">in</span> arr%&#125;</div><div class="line">    &#123;&#123;key&#125;&#125; -- &#123;&#123; avl &#125;&#125;</div><div class="line">&#123;%endfor%&#125;</div></pre></td></tr></table></figure>
+<h5 id="import"><a href="#import" class="headerlink" title="import"></a>import</h5><p>请看 mocaro部分。</p>
+<h5 id="include"><a href="#include" class="headerlink" title="include"></a>include</h5><p>实现复用的方式除了继承，还有组合，这就是以组合方式为来复用一些公共组件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;% include "/this/file/does/not/exist" ignore missing %&#125; &lt;!-- 添加 ignore missing 后，当找不到文件的时候，就会输出"",如果没有就会报错 --&gt;</div><div class="line"></div><div class="line">&#123;% include "./partial.html" with article only %&#125; </div><div class="line">&lt;!-- partial.html --&gt;</div><div class="line">&#123;% block content %&#125;</div><div class="line">    &lt;h1&gt;Posts&lt;/h1&gt;</div><div class="line">    &lt;p&gt;You have&lt;strong&gt;&#123;&#123; a.length &#125;&#125;&lt;/strong&gt;post!&lt;/p&gt;</div><div class="line">    &lt;p&gt;&lt;a href="/post/new"&gt;Create a Post&lt;/a&gt;&lt;/p&gt;</div><div class="line">&#123;% endblock %&#125;</div><div class="line">&lt;!-- 假如传给该模板的是&#123;article: &#123;a: [1,2,3]&#125;, only_list: &#123;one: 12, two: 11&#125;&#125;，这时候 partial中global得到的是 &#123;a: [1,2,3]&#125;这个对象 --&gt;</div></pre></td></tr></table></figure>
+<h5 id="macro"><a href="#macro" class="headerlink" title="macro"></a>macro</h5><p>在你的模板你创建自定义的，可以复用的片段,这要结合{% import %} 使用,从一个模板引入到另外一个模板中。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!-- list.swig --&gt;</div><div class="line">&#123;% macro input(type, name, id, label, value, error) %&#125;</div><div class="line">    &lt;label for="&#123;&#123; name &#125;&#125;"&gt;&#123;&#123; label &#125;&#125;&lt;/label&gt;</div><div class="line">    &lt;input type="&#123;&#123; type &#125;&#125;" name="&#123;&#123; name &#125;&#125;" id="&#123;&#123; id &#125;&#125;" value="&#123;&#123; value &#125;&#125;" &#123;%if error %&#125;class="error"&#123;% endif%&#125; &gt;</div><div class="line">&#123;% endmacro %&#125;</div><div class="line">&lt;!-- 上面定义了一个宏，下面我们在index中import这个宏  --&gt;</div><div class="line">&#123;% extends 'layout.html' %&#125;</div><div class="line">&#123;% import './list.swig' as forms %&#125;</div><div class="line">&#123;% block content %&#125;</div><div class="line">    &#123;&#123; forms.input("text", "name") &#125;&#125;</div><div class="line">&#123;% endblock %&#125;&lt;!-- 一个文件中可以定义多个宏，通过all.one去引用,可以把相同类别的宏放在一起 宏做到了组件封装 --&gt;</div></pre></td></tr></table></figure>
+<h5 id="parent"><a href="#parent" class="headerlink" title="parent"></a>parent</h5><p>把父模板的一个block注入到当前模板中的同名把lock中，是父组件，也就是，必须有继承，看例子吧</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- layout.html --&gt;</div><div class="line">&lt;!-- .....other temp --&gt;</div><div class="line">&#123;% block content %&#125;</div><div class="line">    &lt;p&gt;Missing content&lt;/p&gt;</div><div class="line">&#123;% endblock %&#125;</div><div class="line">&lt;!-- other temp --&gt;</div><div class="line"></div><div class="line">&lt;!-- index.html --&gt;</div><div class="line">&#123;% extends 'layout.html' %&#125;</div><div class="line">&#123;% block content %&#125;</div><div class="line">    My content</div><div class="line">    &#123;% parent %&#125; &lt;!-- parent 所在的块是 content, 他就会去寻找父模板中的同名的block块，并把这个快内容完全copy过来 --&gt;</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
+<h5 id="raw"><a href="#raw" class="headerlink" title="raw"></a>raw</h5><p>强制内容不会自动转义， 所有swig的指令都会被忽略，并且你给什么就渲染什么，不会去执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;% extends <span class="string">'layout.html'</span> %&#125;</div><div class="line">&#123;% block content %&#125;</div><div class="line">&#123;% raw %&#125;&#123;&#123; article.a.length &#125;&#125;&#123;% endraw %&#125;</div><div class="line">&#123;% endblock %&#125;&lt;!-- 结果是 &#123;&#123; article.a.length &#125;&#125;--&gt;</div></pre></td></tr></table></figure>
+<h5 id="set"><a href="#set" class="headerlink" title="set"></a>set</h5><p>设置一个可用变量， 他会覆盖全局重名对象（注意，它的作用域是全局，请看最下面那个例子）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;% extends <span class="string">'layout.html'</span> %&#125;</div><div class="line">&#123;% block content %&#125;</div><div class="line">&#123;% set foo = <span class="string">"anything"</span> %&#125;</div><div class="line">&#123;&#123; foo &#125;&#125;</div><div class="line">&#123;% endblock %&#125; &lt;!-- anthing --&gt;</div><div class="line"></div><div class="line">&#123;% extends <span class="string">'layout.html'</span> %&#125;</div><div class="line">&#123;% block content %&#125;</div><div class="line">&#123;% set foo = <span class="number">1</span> %&#125;</div><div class="line">&#123;% set foo += only_list.novalue|<span class="keyword">default</span>(<span class="number">2</span>) %&#125;</div><div class="line">&#123;&#123; foo &#125;&#125;</div><div class="line">&#123;% endblock %&#125;</div><div class="line"></div><div class="line">&#123;% extends <span class="string">'layout.html'</span> %&#125;</div><div class="line">&#123;% block content %&#125;</div><div class="line">&#123;% set article = <span class="number">1</span> %&#125;</div><div class="line">&#123;&#123; article &#125;&#125; &lt;!-- <span class="number">1</span> --&gt;</div><div class="line">&#123;% endblock %&#125;</div><div class="line">&#123;% block foot %&#125;</div><div class="line">    &#123;&#123;article&#125;&#125; &lt;!-- <span class="number">1</span> --&gt;</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
+<h5 id="spaceless"><a href="#spaceless" class="headerlink" title="spaceless"></a>spaceless</h5><p>移除html标签之间的距离（官方文档提醒：使用请自担风险，不知为什么）。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% spaceless %&#125;</div><div class="line">  &#123;% for x in  %&#125;</div><div class="line">  &lt;li&gt;&#123;&#123; loop.index &#125;&#125;&lt;/li&gt;</div><div class="line">  &#123;% endfor %&#125;</div><div class="line">&#123;% endspaceless %&#125;&lt;!--  &lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;--&gt;</div></pre></td></tr></table></figure>
+<h4 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h4><p>用于渲染的对象可以被filters 修改，filters 是一种特殊的，以管道方式作用于任何对象的方法。同时filters还可以链式的调用，如下例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% extends <span class="string">'layout.html'</span> %&#125;</div><div class="line">&#123;% block content %&#125;</div><div class="line">    &#123;&#123; article.a|striptags|join(<span class="string">','</span>)|title &#125;&#125;</div><div class="line">&#123;% endblock %&#125;</div><div class="line">&lt;!-- <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> --&gt;</div></pre></td></tr></table></figure>
+<p>swig官方已经提供了一系列有用的filter供我们使用。</p>
+<h5 id="addslashs"><a href="#addslashs" class="headerlink" title="addslashs"></a>addslashs</h5><p>转义反斜杠转义符，（ps: 这个方法暂时存在问题）。</p>
+<h5 id="capitalize"><a href="#capitalize" class="headerlink" title="capitalize"></a>capitalize</h5><p>把首字母大写，其他小写。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; <span class="string">"i like Burritos"</span>|capitalize &#125;&#125;</div><div class="line"><span class="comment">// =&gt; I like burritos</span></div></pre></td></tr></table></figure>
+<h5 id="date-format-offset-abbr"><a href="#date-format-offset-abbr" class="headerlink" title="date(format, offset, abbr)"></a>date(format, offset, abbr)</h5><p>格式化一个时间或者时间字符串， 参数：format php格式的类日期字符串，用\转义特殊字符。offset：与格林乔治时间的分钟偏移，abbr：时区<br>ps: 看了源码，部分时间格式如下（有兴趣逐一自行尝试，就可以知道这些字符输出什么了）：</p>
+<ul>
+<li>Day: d,D,j,l,N,S,w,z</li>
+<li>Week: W,</li>
+<li>Month: F, m, M, n, t, </li>
+<li>Year: L, o, Y, y,</li>
+<li>Time: a, A, B, g, G, H, i, s</li>
+<li>Timezone: O, Z</li>
+<li>Full Date/time: c, r, U </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--now = <span class="keyword">new</span> <span class="built_in">Date</span>(); --&gt; </div><div class="line">&#123;&#123; now|date(<span class="string">'Y-m-d'</span>) &#125;&#125;</div><div class="line">&lt;!-- <span class="number">2016</span><span class="number">-07</span><span class="number">-21</span> --&gt;</div><div class="line"></div><div class="line">&lt;!-- now: '2014/07/08' --&gt;</div><div class="line">&#123;&#123; now|date('jS \o\f F') &#125;&#125;</div><div class="line">&lt;!-- th of July --&gt;</div></pre></td></tr></table></figure>
+<h5 id="default-def"><a href="#default-def" class="headerlink" title="default(def)"></a>default(def)</h5><p>当变量输出为 <code>false</code>, <code>null</code>,<code>undefined</code>时，<code>def</code>会被当成默认值输出。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; null_value|<span class="keyword">default</span>(<span class="string">'Tacos'</span>) &#125;&#125;</div></pre></td></tr></table></figure>
+<h5 id="escape-type"><a href="#escape-type" class="headerlink" title="escape(type)"></a>escape(type)</h5><p>强制转译， 当Tags里的autoescape 块里的输出默认应用escape, type 默认 html， 如果传入js，那么js代码块输出会被转义。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; <span class="string">"&lt;blah&gt;"</span>|<span class="built_in">escape</span> &#125;&#125; &lt;!--  &amp;lt;blah&amp;gt; --&gt;</div><div class="line">&#123;&#123; <span class="string">"&lt;blah&gt;"</span>|<span class="built_in">escape</span>(<span class="string">'js'</span>) &#125;&#125; &lt;!-- \u003Cblah\u003E 暂不知道实际用处--&gt;</div></pre></td></tr></table></figure>
+<h5 id="first"><a href="#first" class="headerlink" title="first"></a>first</h5><p>获取数组或字符串的第一个元素输出，其他的对象将会尽量输出第一个值的变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;% block content %&#125;</div><div class="line">    &#123;&#123; article.a|first &#125;&#125; </div><div class="line">&#123;% endblock %&#125; &lt;!-- <span class="number">1</span> --&gt;</div><div class="line"></div><div class="line">&lt;!-- only_list: &#123;one: 12, two: 11&#125; --&gt;</div><div class="line">&#123;% block content %&#125;</div><div class="line">    &#123;&#123; only_list|first &#125;&#125; </div><div class="line">&#123;% endblock %&#125; &lt;!-- 12 --&gt;</div></pre></td></tr></table></figure>
+<h5 id="groupBy-key"><a href="#groupBy-key" class="headerlink" title="groupBy(key)"></a>groupBy(key)</h5><p>提取一个对象数组的公共key值，组成一个新的对象数组 ps:重组是在原数据上修改的，</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% block content %&#125;</div><div class="line">&lt;p&gt;&#123;&#123; JSON.stringify(people|groupBy('age')) &#125;&#125;&lt;/p&gt; &lt;!-- &#123;"23":[&#123;"name":"Paul"&#125;,&#123;"name":"Jim"&#125;],"26":[&#123;"name":"Jane"&#125;]&#125; --&gt;</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
+<h5 id="join-glue"><a href="#join-glue" class="headerlink" title="join(glue)"></a>join(glue)</h5><p>把输入用glue链接成字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// my_key_object = &#123; a: 'foo', b: 'bar', c: 'baz' &#125;</span></div><div class="line">&#123;&#123; my_key_object|join(<span class="string">' and '</span>) &#125;&#125;</div><div class="line"><span class="comment">// =&gt; foo and bar and baz</span></div></pre></td></tr></table></figure>
+<h5 id="json-indent"><a href="#json-indent" class="headerlink" title="json(indent)"></a>json(indent)</h5><p>把输入转化为json字符串 ps：也可以直接JSON.stringify()转化也是一样的效果。</p>
+<h5 id="last"><a href="#last" class="headerlink" title="last"></a>last</h5><p>和上面的first差不错，只是last是获取最后一个。</p>
+<h5 id="lower"><a href="#lower" class="headerlink" title="lower"></a>lower</h5><p>把输入转化为小写字母</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- article: &#123;a: <span class="string">"Hello"</span>&#125; --&gt;</div><div class="line">&#123;% block content %&#125;</div><div class="line">    &#123;&#123; article|lower|join(<span class="string">''</span>) &#125;&#125;</div><div class="line">&#123;% endblock %&#125;</div><div class="line">&lt;!-- hello --&gt;</div></pre></td></tr></table></figure>
+<h5 id="raw-1"><a href="#raw-1" class="headerlink" title="raw"></a>raw</h5><p>已经由 <code>safe</code> 代替</p>
+<h5 id="safe"><a href="#safe" class="headerlink" title="safe"></a>safe</h5><p>强制输入不会被转义，用在你已经确认安全的模板环境中, 和tags标签 raw区别是，它只是不转义，但是变量还是会被输出，tags的raw是所有原样输出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// my_var = "&lt;p&gt;Stuff&lt;/p&gt;";</span></div><div class="line">&#123;&#123; my_var|safe &#125;&#125;</div><div class="line"><span class="comment">// =&gt; &lt;p&gt;Stuff&lt;/p&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h5><p>升序排列输入， 如果是对象那个，返回一个key的集合数组。如果给定一个字符串，那么按字符排序</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// val = &#123; bar: 1, foo: 2 &#125;</span></div><div class="line">&#123;&#123; val|sort(<span class="literal">true</span>) &#125;&#125;</div><div class="line"><span class="comment">// =&gt; foo,bar</span></div></pre></td></tr></table></figure>
+<h5 id="striptags"><a href="#striptags" class="headerlink" title="striptags"></a>striptags</h5><p>跳过字符串中的标签部分。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// stuff = '&lt;p&gt;foobar&lt;/p&gt;';</span></div><div class="line">&#123;&#123; stuff|striptags &#125;&#125;</div><div class="line"><span class="comment">// =&gt; foobar</span></div></pre></td></tr></table></figure>
+<h5 id="title"><a href="#title" class="headerlink" title="title"></a>title</h5><p>大写所有单词第一个字符，和capitalize要区分开。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// my_arr = ['hi', 'this', 'is', 'an', 'array'];</span></div><div class="line">&#123;&#123; my_arr|title|join(<span class="string">' '</span>) &#125;&#125;</div><div class="line"><span class="comment">// =&gt; Hi This Is An Array</span></div></pre></td></tr></table></figure>
+<h5 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h5><p>删除数组中重复项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// my_arr = [1, 2, 3, 4, 4, 3, 2, 1];</span></div><div class="line">&#123;&#123; my_arr|uniq|join(<span class="string">','</span>) &#125;&#125;</div><div class="line"><span class="comment">// =&gt; 1,2,3,4</span></div></pre></td></tr></table></figure>
+<h5 id="upper"><a href="#upper" class="headerlink" title="upper"></a>upper</h5><p>把输入转化为大写，对象和数组把他们的value转化为大写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// my_arr = ['tacos', 'burritos'];</span></div><div class="line">&#123;&#123; my_arr|upper|join(<span class="string">' &amp; '</span>) &#125;&#125;</div><div class="line"><span class="comment">// =&gt; TACOS &amp; BURRITOS</span></div></pre></td></tr></table></figure>
+<h5 id="url-encode"><a href="#url-encode" class="headerlink" title="url_encode"></a>url_encode</h5><p>对给定的值进行url_encode转码， 对于数组和对象，会遍历他们的value，把他们逐一url_encode。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// my_str = 'param=1&amp;anotherParam=2';</span></div><div class="line">&#123;&#123; my_str|url_encode &#125;&#125;</div><div class="line"><span class="comment">// =&gt; param%3D1%26anotherParam%3D2</span></div></pre></td></tr></table></figure>
+<h5 id="url-decode"><a href="#url-decode" class="headerlink" title="url_decode"></a>url_decode</h5><p>上面的反操作。</p>
+<h4 id="swig-API"><a href="#swig-API" class="headerlink" title="swig API"></a>swig API</h4><p>swig给我们提供了很多api，这里我也只是罗列几个常用api来学习学习。  </p>
+<h5 id="swig-setDefaults-options"><a href="#swig-setDefaults-options" class="headerlink" title="swig.setDefaults( options )"></a>swig.setDefaults( options )</h5><p>传入参数为 SwigOpts 实例（字面量形式）。</p>
+<ul>
+<li>autoescape： 默认为true， 是否自动转义，在上面filter，tags中都有介绍escape；</li>
+<li>varControls：变量的匹配形式，建议不要修改默认['{{', '}}']；</li>
+<li>tagControls：标签匹配['{%', '%}']。</li>
+<li>cmtControls：代码块['{#', '#}']</li>
+<li>locals：设置一个所有模板都能访问的全局对象。</li>
+<li>cache： CacheOptions =&gt;{ cache: 'memory'|false }, 可以自定义，（set，get自定义~~不过不会）’memory’表示存储在内存中；</li>
+<li>loader：模板加载器， 可以自定义模板加载器，默认是 swig.loaders.fs.官网说明(<a href="http://paularmstrong.github.io/swig/docs/loaders/)；" target="_blank" rel="external">http://paularmstrong.github.io/swig/docs/loaders/)；</a></li>
+</ul>
+<p>loader 的例子（swig.loaders.fs ， swig.loaders.memory的区别）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Default, FileSystem loader</span></div><div class="line">swig.setDefaults(&#123; loader: swig.loaders.fs() &#125;);</div><div class="line"></div><div class="line"><span class="comment">// FileSystem loader allowing a base path</span></div><div class="line"><span class="comment">// With this, you don't use relative URLs in your template references</span></div><div class="line">swig.setDefaults(&#123;loader: swig.loaders.fs(__dirname + <span class="string">'/views'</span>) &#125;) &lt;!-- 之前：<span class="keyword">var</span> tpl = swig.compileFile(<span class="string">'./views/index.swig'</span>); --&gt;</div><div class="line"><span class="keyword">var</span> tpl = swig.compileFile(<span class="string">'index.swig'</span>);</div><div class="line"></div><div class="line"><span class="comment">// Memory Loader</span></div><div class="line">swig.setDefaults(&#123; loader: swig.loaders.memory(&#123;</div><div class="line">  layout: <span class="string">'&#123;% block foo %&#125;&#123;% endblock %&#125;'</span>,</div><div class="line">  page1: <span class="string">'&#123;% extends "layout" %&#125;&#123;% block foo %&#125;Tacos!&#123;% endblock %&#125;'</span></div><div class="line">&#125;)&#125;);</div></pre></td></tr></table></figure>
+<h5 id="swig-Swig-opts"><a href="#swig-Swig-opts" class="headerlink" title="swig.Swig( opts )"></a>swig.Swig( opts )</h5><p>创建了一个新的编译渲染环境, opts 是 SwigOpts，创建一个独立，干净的隔离环境（摆摆姿势）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> swig = <span class="built_in">require</span>(<span class="string">'swig'</span>);</div><div class="line"><span class="keyword">var</span> myswig = <span class="keyword">new</span> swig.Swig(&#123;varControls: [<span class="string">'&lt;%='</span>, <span class="string">'%&gt;'</span>]&#125;);</div><div class="line">myswig.render(<span class="string">'Tacos are &lt;%= tacos =&gt;!'</span>, &#123; locals: &#123; tacos: <span class="string">'delicious'</span> &#125;&#125;);</div><div class="line"><span class="comment">// =&gt; Tacos are delicious!</span></div><div class="line">swig.render(<span class="string">'Tacos are &lt;%= tacos =&gt;!'</span>, &#123; locals: &#123; tacos: <span class="string">'delicious'</span> &#125;&#125;);</div><div class="line"><span class="comment">// =&gt; 'Tacos are &lt;%= tacos =&gt;!'</span></div></pre></td></tr></table></figure>
+<h5 id="swig-invalidateCache"><a href="#swig-invalidateCache" class="headerlink" title="swig.invalidateCache( )"></a>swig.invalidateCache( )</h5><p>清除 memory 中的模板缓存。 </p>
+<h5 id="swig-setFilter-name-method"><a href="#swig-setFilter-name-method" class="headerlink" title="swig.setFilter( name , method )"></a>swig.setFilter( name , method )</h5><p>自定义一个过滤器, 在官方提供的过滤器不满足时，可以自己定义，method中会传入 input字符串值。并且会覆盖同名 filter。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceMs</span>(<span class="params">input</span>) </span>&#123; <span class="keyword">return</span> input.replace(<span class="regexp">/m/g</span>, <span class="string">'f'</span>); &#125;</div><div class="line">swig.setFilter(<span class="string">'replaceMs'</span>, replaceMs);</div><div class="line"><span class="comment">// =&gt; &#123;&#123; "onomatopoeia"|replaceMs &#125;</span></div></pre></td></tr></table></figure>
+<h5 id="swig-setTag-name-parse-compile-ends-blockLevel"><a href="#swig-setTag-name-parse-compile-ends-blockLevel" class="headerlink" title="swig.setTag( name , parse , compile , ends , blockLevel )"></a>swig.setTag( name , parse , compile , ends , blockLevel )</h5><p>自定义标签， 水很深，暂时就不深入了。迁移到这(<a href="http://paularmstrong.github.io/swig/docs/api/#setTag" target="_blank" rel="external">http://paularmstrong.github.io/swig/docs/api/#setTag</a>)</p>
+<h5 id="swig-render-source-options"><a href="#swig-render-source-options" class="headerlink" title="swig.render( source , options )"></a>swig.render( source , options )</h5><p>编译和渲染（可能不是这么称呼的~）一个模板字符串一直到输出。</p>
+<ul>
+<li>source 资源字符串（不是路径哦。）</li>
+<li>options 上面介绍的 SwigOpts</li>
+<li>return 输出。</li>
+</ul>
+<h5 id="swig-renderFile-pathName-locals-cb"><a href="#swig-renderFile-pathName-locals-cb" class="headerlink" title="swig.renderFile( pathName , locals , cb )"></a>swig.renderFile( pathName , locals , cb )</h5><ul>
+<li>pathName 地址</li>
+<li>locals 传入变量</li>
+<li>cb 如果有，则是异步执行， 如果没有，这是同步执行。 cb(err, output)</li>
+</ul>
+<h5 id="swig-compile-source-options"><a href="#swig-compile-source-options" class="headerlink" title="swig.compile( source , options )"></a>swig.compile( source , options )</h5><p>编译成一个可以渲染的模板方法。</p>
+<ul>
+<li>source 资源字符串</li>
+<li>options SwigOpts对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">swig.compile( source , options )(locals)</div></pre></td></tr></table></figure>
+<h5 id="swig-compileFile-pathname-options-cb"><a href="#swig-compileFile-pathname-options-cb" class="headerlink" title="swig.compileFile( pathname , options , cb )"></a>swig.compileFile( pathname , options , cb )</h5><p>编译一个资源文件成为一个可以渲染的模板方法。</p>
+<h5 id="swig-run-tpl-locals-filepath"><a href="#swig-run-tpl-locals-filepath" class="headerlink" title="swig.run( tpl , locals , filepath )"></a>swig.run( tpl , locals , filepath )</h5><p>运行一个预编译模板方法， 当你用swig命令行预编译工具预编译你的模板时，在浏览器端引用的时候用它。~~</p>
+<ul>
+<li>tpl ，用命令行工具编译了模板后，生成的对象（编译时指定）。看下面例子</li>
+<li>locals 数据对象</li>
+<li>filepath 缓存模板的路径</li>
+</ul>
+<p>命令行编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ swig compile ./mytpl.html --wrap-start=<span class="string">"var mytpl = "</span> &gt; mytpl.js</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"mytpl.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  swig.run(mytpl, &#123;&#125;);</div><div class="line">  <span class="comment">// =&gt; "rendered template..."</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="工程应用"><a href="#工程应用" class="headerlink" title="工程应用"></a>工程应用</h3><p>在koa中，co-view已经集成了 swig， 你可以开心的在 koa中去用它。</p>
+<p>下载co-view包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save co-views</div></pre></td></tr></table></figure>
+<p>下载你要用的 swig（当然，如果你想用Jade,就要下载jade）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save swig</div></pre></td></tr></table></figure>
+<p>使用（ {map: { html: 'swig' }}，可以把swig后缀改成html后缀， 我个人在sublime上装了swig的语法高亮，就不加了，所以这时候应该配置：<br>{ext: 'swig'}, 不然找不到） </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>);</div><div class="line"><span class="keyword">var</span> views = <span class="built_in">require</span>(<span class="string">'co-views'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> render = views(<span class="string">'examples'</span>, &#123;</div><div class="line">  map: &#123; html: <span class="string">'swig'</span> &#125; </div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> tobi = &#123;</div><div class="line">  name: <span class="string">'tobi'</span>,</div><div class="line">  species: <span class="string">'ferret'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> loki = &#123;</div><div class="line">  name: <span class="string">'loki'</span>,</div><div class="line">  species: <span class="string">'ferret'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> luna = &#123;</div><div class="line">  name: <span class="string">'luna'</span>,</div><div class="line">  species: <span class="string">'cat'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">co(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> a = render(<span class="string">'user'</span>, &#123; user: tobi &#125;);</div><div class="line">  <span class="keyword">var</span> b = render(<span class="string">'user.jade'</span>, &#123; user: loki &#125;);</div><div class="line">  <span class="keyword">var</span> c = render(<span class="string">'user.ejs'</span>, &#123; user: luna &#125;);</div><div class="line">  <span class="keyword">var</span> html = <span class="keyword">yield</span> [a, b, c];</div><div class="line">  html = html.join(<span class="string">''</span>);</div><div class="line">  <span class="built_in">console</span>.log(html);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>swig真的是很强大，比起其他模板引擎，文档非常齐全，我这里介绍的不过是其中一部分，希望能帮助大家入门，如果想要深入了解，大家可以进入官网阅读更细致的文档。</p>
+<p>最后如果这边文档帮到了你，不要吝啬你的star，在github上狠狠甩我一脸吧~~哈哈(<a href="https://github.com/jiapengdeng/jiapengdeng.github.io" target="_blank" rel="external">https://github.com/jiapengdeng/jiapengdeng.github.io</a>)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/20/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="邓加鹏" />
+          <p class="site-author-name" itemprop="name">邓加鹏</p>
+          <p class="site-description motion-element" itemprop="description">前端，脚本，后台开发</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jiapengdeng/jiapengdeng.github.io.git" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启程"><span class="nav-number">1.</span> <span class="nav-text">启程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">1.2.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签（Tags）"><span class="nav-number">1.2.1.</span> <span class="nav-text">标签（Tags）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#autoscape"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">autoscape</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#block"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">block</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#else"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">else</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#extends"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">extends</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#filter"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#import"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">import</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#include"><span class="nav-number">1.2.1.8.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#macro"><span class="nav-number">1.2.1.9.</span> <span class="nav-text">macro</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parent"><span class="nav-number">1.2.1.10.</span> <span class="nav-text">parent</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#raw"><span class="nav-number">1.2.1.11.</span> <span class="nav-text">raw</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#set"><span class="nav-number">1.2.1.12.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#spaceless"><span class="nav-number">1.2.1.13.</span> <span class="nav-text">spaceless</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Filters"><span class="nav-number">1.2.2.</span> <span class="nav-text">Filters</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#addslashs"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">addslashs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#capitalize"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">capitalize</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#date-format-offset-abbr"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">date(format, offset, abbr)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#default-def"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">default(def)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#escape-type"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">escape(type)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#first"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">first</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#groupBy-key"><span class="nav-number">1.2.2.7.</span> <span class="nav-text">groupBy(key)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join-glue"><span class="nav-number">1.2.2.8.</span> <span class="nav-text">join(glue)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#json-indent"><span class="nav-number">1.2.2.9.</span> <span class="nav-text">json(indent)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#last"><span class="nav-number">1.2.2.10.</span> <span class="nav-text">last</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lower"><span class="nav-number">1.2.2.11.</span> <span class="nav-text">lower</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#raw-1"><span class="nav-number">1.2.2.12.</span> <span class="nav-text">raw</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#safe"><span class="nav-number">1.2.2.13.</span> <span class="nav-text">safe</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sort"><span class="nav-number">1.2.2.14.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#striptags"><span class="nav-number">1.2.2.15.</span> <span class="nav-text">striptags</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#title"><span class="nav-number">1.2.2.16.</span> <span class="nav-text">title</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#uniq"><span class="nav-number">1.2.2.17.</span> <span class="nav-text">uniq</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#upper"><span class="nav-number">1.2.2.18.</span> <span class="nav-text">upper</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#url-encode"><span class="nav-number">1.2.2.19.</span> <span class="nav-text">url_encode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#url-decode"><span class="nav-number">1.2.2.20.</span> <span class="nav-text">url_decode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#swig-API"><span class="nav-number">1.2.3.</span> <span class="nav-text">swig API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-setDefaults-options"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">swig.setDefaults( options )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-Swig-opts"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">swig.Swig( opts )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-invalidateCache"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">swig.invalidateCache( )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-setFilter-name-method"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">swig.setFilter( name , method )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-setTag-name-parse-compile-ends-blockLevel"><span class="nav-number">1.2.3.5.</span> <span class="nav-text">swig.setTag( name , parse , compile , ends , blockLevel )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-render-source-options"><span class="nav-number">1.2.3.6.</span> <span class="nav-text">swig.render( source , options )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-renderFile-pathName-locals-cb"><span class="nav-number">1.2.3.7.</span> <span class="nav-text">swig.renderFile( pathName , locals , cb )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-compile-source-options"><span class="nav-number">1.2.3.8.</span> <span class="nav-text">swig.compile( source , options )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-compileFile-pathname-options-cb"><span class="nav-number">1.2.3.9.</span> <span class="nav-text">swig.compileFile( pathname , options , cb )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swig-run-tpl-locals-filepath"><span class="nav-number">1.2.3.10.</span> <span class="nav-text">swig.run( tpl , locals , filepath )</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工程应用"><span class="nav-number">1.3.</span> <span class="nav-text">工程应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">邓加鹏</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
